@@ -1,0 +1,14 @@
+[user]
+    name = Telmooo
+    email = telmooo.dev@gmail.com
+    signingkey = 8F77CD94874633DF
+
+[core]
+    editor = nvim
+
+[commit]
+  gpgsign = true
+  verbose = true
+
+[init]
+    defaultBranch = main
