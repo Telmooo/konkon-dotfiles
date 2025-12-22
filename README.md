@@ -15,7 +15,7 @@
        / ￣|   | | |
       │ ( ￣ヽ__ヽ_)__)
        \二つ
-       
+
     ═══════════════════════════════════════════════════
 </td></tr></table>
 
@@ -27,4 +27,3 @@
 [![License: MIT](https://img.shields.io/github/license/Telmooo/konkon-dotfiles?style=for-the-badge&color=yellow)](LICENSE)
 
 </div>
-
