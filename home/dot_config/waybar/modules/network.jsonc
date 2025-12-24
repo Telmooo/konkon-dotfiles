@@ -1,0 +1,45 @@
+// -*- mode: jsonc -*-
+//    ❄️  ═══════════════════════════════════════════  ❄️
+//
+//              />  フ　　　🦊　konkon-dotfiles
+//             |  _  _ l
+//       🌸   /` ミ_xノ  こんこん。。。
+//           /      |
+//          /  ヽ   ノ         battery.jsonc
+//         │   | | |        Waybar Battery Module
+//
+//                    one soul, many forms
+//               shape-shifting configurations
+//
+//    ❄️  ═══════════════════════════════════════════  ❄️
+{
+    "network": {
+        // "interface": "",
+        "interval": 60,
+        "family": "ipv4",
+        "format": "󰤨",
+        "format-ethernet": "󰈀",
+        "format-wifi": "{icon}",
+        // "format-linked": "",
+        "format-disconnected": "󰤫",
+        "format-disabled": "󰤮",
+        // "format-alt": "",
+        "format-icons": [
+            "󰤟", "󰤢", "󰤥", "󰤨"
+        ],
+        // "rotate": 0,
+        "max-length": 2,
+        // "on-click": "",
+        // "on-click-middle": "",
+        // "on-click-right": "",
+        // "on-scroll-up": "",
+        // "on-scroll-down": "",
+        // "smooth-scrolling-threshold": 0,
+        "tooltip": true,
+        "tooltip-format": "",
+        "tooltip-format-ethernet": "",
+        "tooltip-format-wifi": "",
+        "tooltip-format-disconnected": "",
+        "tooltip-format-disabled": ""
+    }
+}

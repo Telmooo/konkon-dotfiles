@@ -1,0 +1,47 @@
+// -*- mode: jsonc -*-
+//    ❄️  ═══════════════════════════════════════════  ❄️
+//
+//              />  フ　　　🦊　konkon-dotfiles
+//             |  _  _ l
+//       🌸   /` ミ_xノ  こんこん。。。
+//           /      |
+//          /  ヽ   ノ         battery.jsonc
+//         │   | | |        Waybar Battery Module
+//
+//                    one soul, many forms
+//               shape-shifting configurations
+//
+//    ❄️  ═══════════════════════════════════════════  ❄️
+{
+    "clock": {
+        "interval": 60,
+        "format": "{:%H:%M}",
+        // "format-alt": "",
+        "timezone": "",
+        "timezones": [],
+        "locale": "",
+        "max-length": 5,
+        // "rotate": 0,
+        // "on-click": "",
+        // "on-click-middle": "",
+        // "on-click-right": "",
+        // "on-scroll-up": "",
+        // "on-scroll-down": "",
+        // "smooth-scrolling-threshold": "",
+        "tooltip": true,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            // "mode-mon-col": 3,
+            // "weeks-pos": "left",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span alpha='100%'><b>{}</b></span>",
+                "days": "<span alpha='90%'>{}</span>",
+                // "weeks": "",
+                "weekdays": "<span alpha='80%'><i>{}</i></span>",
+                "today": "<span alpha='100%'><b>{}</b></span>"
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+// -*- mode: jsonc -*-
+//    ❄️  ═══════════════════════════════════════════  ❄️
+//
+//              />  フ　　　🦊　konkon-dotfiles
+//             |  _  _ l
+//       🌸   /` ミ_xノ  こんこん。。。
+//           /      |
+//          /  ヽ   ノ         battery.jsonc
+//         │   | | |        Waybar Battery Module
+//
+//                    one soul, many forms
+//               shape-shifting configurations
+//
+//    ❄️  ═══════════════════════════════════════════  ❄️
+{
+    "hyprland/workspaces": {
+        // "active-only": false,
+        // "hide-active": false,
+        // "all-outputs": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+        // "workspace-taskbar": {},
+        // "persistent-only": false,
+        // "show-special": false,
+        // "special-visible-only": false,
+        // "sort-by": "DEFAULT",
+        // "window-rewrite": {},
+        // "window-rewrite-default": "?",
+        // "window-rewrite-separator": "<space>",
+        // "move-to-monitor": false,
+        // "ignore-workspaces": [],
+        // "on-scroll-up": "",
+        // "on-scroll-down": ""
+    }
+}

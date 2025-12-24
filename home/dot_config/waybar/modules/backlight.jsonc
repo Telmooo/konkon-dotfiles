@@ -1,0 +1,39 @@
+// -*- mode: jsonc -*-
+//    ❄️  ═══════════════════════════════════════════  ❄️
+//
+//              />  フ　　　🦊　konkon-dotfiles
+//             |  _  _ l
+//       🌸   /` ミ_xノ  こんこん。。。
+//           /      |
+//          /  ヽ   ノ         battery.jsonc
+//         │   | | |        Waybar Battery Module
+//
+//                    one soul, many forms
+//               shape-shifting configurations
+//
+//    ❄️  ═══════════════════════════════════════════  ❄️
+{
+    "backlight": {
+        // "device": "",
+        "interval": 2,
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"
+        ],
+        "min-length": 7,
+        "max-length": 7,
+        // "rotate": 0,
+        // "states": [],
+        // "on-click": "",
+        // "on-click-middle": "",
+        // "on-click-right": "",
+        // "on-scroll-up": "",
+        // "on-scroll-down": "",
+        // "smooth-scrolling-threshold": 0,
+        // "reverse-scrolling": false,
+        // "reverse-mouse-scrolling": false,
+        // "scroll-step": 1.0,
+        "tooltip": false
+        // "tooltip-format": ""
+    }
+}

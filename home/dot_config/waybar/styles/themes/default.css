@@ -1,0 +1,371 @@
+/*
+    ❄️  ═══════════════════════════════════════════  ❄️
+
+              />  フ　　　🦊　konkon-dotfiles
+             |  _  _ l
+       🌸   /` ミ_xノ  こんこん。。。
+           /      |
+          /  ヽ   ノ         config.jsonc
+         │   | | |        Waybar Configuration
+
+                    one soul, many forms
+               shape-shifting configurations
+
+    ❄️  ═══════════════════════════════════════════  ❄️
+*/
+
+/*
+    ╭─────────────────────────────────────────────────────────────╮
+    │  BASE COLOURS                                               │
+    ╰─────────────────────────────────────────────────────────────╯
+*/
+
+@define-color sakura_pink_100                   #fff0ff;
+@define-color sakura_pink_200                   #ffd9ff;
+@define-color sakura_pink_300                   #ffc4ff;
+@define-color sakura_pink_400                   #fdb8ff;
+@define-color sakura_pink_500                   #e89ff0;
+@define-color sakura_pink_600                   #d386e1;
+@define-color sakura_pink_700                   #be6dd2;
+
+@define-color pink_soft_100                     #ffe4f0;
+@define-color pink_soft_200                     #ffccdf;
+@define-color pink_soft_300                     #ffb3d9;
+@define-color pink_soft_400                     #ff9ecb;
+@define-color pink_soft_500                     #ff85bd;
+@define-color pink_soft_600                     #ff6caf;
+
+@define-color pink_blush_300                    #ffc0e0;
+@define-color pink_blush_400                    #ffaad5;
+@define-color pink_blush_500                    #ff94ca;
+
+@define-color purple_100                        #f5f0ff;
+@define-color purple_200                        #e9d5ff;
+@define-color purple_300                        #d8b4fe;
+@define-color purple_400                        #c084fc;
+@define-color purple_500                        #a855f7;
+@define-color purple_600                        #9333ea;
+@define-color purple_700                        #7e22ce;
+
+@define-color lavender_300                      #ddd6fe;
+@define-color lavender_400                      #c4b5fd;
+@define-color lavender_500                      #a78bfa;
+
+@define-color plum_400                          #dda0dd;
+@define-color plum_500                          #c78bc7;
+@define-color plum_600                          #b39ddb;
+
+@define-color sky_blue_100                      #e0f2fe;
+@define-color sky_blue_200                      #bae6fd;
+@define-color sky_blue_300                      #93c5fd;
+@define-color sky_blue_400                      #60a5fa;
+@define-color sky_blue_500                      #3b82f6;
+@define-color sky_blue_600                      #2563eb;
+@define-color sky_blue_700                      #1d4ed8;
+
+@define-color ocean_blue_300                    #7dd3fc;
+@define-color ocean_blue_400                    #38bdf8;
+@define-color ocean_blue_500                    #0ea5e9;
+
+@define-color ice_blue_300                      #add8e6;
+@define-color ice_blue_400                      #87ceeb;
+@define-color ice_blue_500                      #6db4d6;
+
+@define-color orange_100                        #ffe8d9;
+@define-color orange_200                        #ffd4bf;
+@define-color orange_300                        #ffb899;
+@define-color orange_400                        #ff9966;
+@define-color orange_500                        #ff8c4f;
+@define-color orange_600                        #ff7a33;
+@define-color orange_700                        #ff6819;
+
+@define-color peach_300                         #ffd4a3;
+@define-color peach_400                         #ffc281;
+@define-color peach_500                         #ffb86c;
+
+@define-color mint_green_100                    #d1fae5;
+@define-color mint_green_200                    #a7f3d0;
+@define-color mint_green_300                    #6ee7b7;
+@define-color mint_green_400                    #7bed9f;
+@define-color mint_green_500                    #34d399;
+@define-color mint_green_600                    #10b981;
+@define-color mint_green_700                    #059669;
+
+@define-color sage_green_300                    #98d8c8;
+@define-color sage_green_400                    #7ec8b5;
+@define-color sage_green_500                    #64b8a2;
+
+@define-color coral_red_100                     #ffe5e5;
+@define-color coral_red_200                     #ffcccc;
+@define-color coral_red_300                     #ffb3b3;
+@define-color coral_red_400                     #ff9999;
+@define-color coral_red_500                     #ff6b6b;
+@define-color coral_red_600                     #ff5555;
+@define-color coral_red_700                     #ff3333;
+
+@define-color rose_400                          #ff8a9e;
+@define-color rose_500                          #ff7089;
+@define-color rose_600                          #ff5674;
+
+@define-color honey_yellow_100                  #fff7e6;
+@define-color honey_yellow_200                  #ffe9c2;
+@define-color honey_yellow_300                  #ffd89d;
+@define-color honey_yellow_400                  #ffa502;
+@define-color honey_yellow_500                  #ff9500;
+@define-color honey_yellow_600                  #ff8500;
+
+@define-color cream_300                         #ffe4b5;
+@define-color cream_400                         #ffd580;
+@define-color cream_500                         #ffc34d;
+
+@define-color gold_400                          #ffd700;
+@define-color gold_500                          #ffc700;
+@define-color gold_600                          #ffb700;
+
+@define-color warm_grey_50                      #faf9fb;
+@define-color warm_grey_100                     #f5f3f7;
+@define-color warm_grey_200                     #e9e5ed;
+@define-color warm_grey_300                     #d4cdd9;
+@define-color warm_grey_400                     #b8afc0;
+@define-color warm_grey_500                     #9c91a7;
+@define-color warm_grey_600                     #7d7189;
+@define-color warm_grey_700                     #5e536b;
+@define-color warm_grey_800                     #4a3f57;
+@define-color warm_grey_900                     #2d2433;
+@define-color warm_grey_950                     #1a1520;
+
+@define-color cool_grey_50                      #f8fafc;
+@define-color cool_grey_100                     #f1f5f9;
+@define-color cool_grey_200                     #e2e8f0;
+@define-color cool_grey_300                     #cbd5e1;
+@define-color cool_grey_400                     #94a3b8;
+@define-color cool_grey_500                     #64748b;
+@define-color cool_grey_600                     #475569;
+@define-color cool_grey_700                     #334155;
+@define-color cool_grey_800                     #1e293b;
+@define-color cool_grey_900                     #0f172a;
+
+@define-color grey_50                           #fafafa;
+@define-color grey_100                          #f4f4f5;
+@define-color grey_200                          #e4e4e7;
+@define-color grey_300                          #d4d4d8;
+@define-color grey_400                          #a1a1aa;
+@define-color grey_500                          #71717a;
+@define-color grey_600                          #52525b;
+@define-color grey_700                          #3f3f46;
+@define-color grey_800                          #27272a;
+@define-color grey_900                          #18181b;
+
+@define-color muted_grey                        #666666;
+
+@define-color pure_white                        #ffffff;
+@define-color soft_white                        #f8f4ff;
+@define-color pure_black                        #000000;
+@define-color soft_black                        #0a0a0a;
+
+/*
+    ╭─────────────────────────────────────────────────────────────╮
+    │  THEME COLOURS                                              │
+    ╰─────────────────────────────────────────────────────────────╯
+*/
+
+@define-color primary                           @sakura_pink_400;
+@define-color primary_light                     @sakura_pink_300;
+@define-color primary_lighter                   @sakura_pink_200;
+@define-color primary_lightest                  @sakura_pink_100;
+@define-color primary_dark                      @sakura_pink_500;
+@define-color primary_darker                    @sakura_pink_600;
+@define-color primary_darkest                   @sakura_pink_700;
+
+@define-color primary_hover                     @sakura_pink_300;
+@define-color primary_active                    @sakura_pink_500;
+@define-color primary_focus                     @sakura_pink_400;
+@define-color primary_disabled                  @warm_grey_400;
+
+@define-color secondary                         @purple_500;
+@define-color secondary_light                   @purple_400;
+@define-color secondary_lighter                 @purple_300;
+@define-color secondary_lightest                @purple_200;
+@define-color secondary_dark                    @purple_600;
+@define-color secondary_darker                  @purple_700;
+
+@define-color secondary_hover                   @purple_400;
+@define-color secondary_active                  @purple_600;
+@define-color secondary_focus                   @purple_500;
+
+@define-color accent                            @sakura_pink_400;
+@define-color accent_light                      @sakura_pink_300;
+@define-color accent_dark                       @sakura_pink_600;
+
+@define-color accent_hover @accent_light;
+@define-color accent_active @accent_dark;
+
+@define-color bg_base                           @warm_grey_950;
+@define-color bg_surface                        @warm_grey_900;
+@define-color bg_elevated                       @warm_grey_800;
+@define-color bg_overlay                        @warm_grey_700;
+
+@define-color bg_subtle                         alpha(@sakura_pink_400, 0.10);
+@define-color bg_muted                          alpha(@sakura_pink_400, 0.15);
+@define-color bg_emphasis                       alpha(@sakura_pink_400, 0.20);
+
+@define-color bg_transparent                    alpha(@warm_grey_400, 0.75);
+
+@define-color bg_light_base                     @warm_grey_50;
+@define-color bg_light_surface                  @pure_white;
+@define-color bg_light_elevated                 @warm_grey_100;
+@define-color bg_light_overlay                  @warm_grey_200;
+
+@define-color fg_primary                        @pure_white;
+@define-color fg_secondary                      @warm_grey_300;
+@define-color fg_tertiary                       @warm_grey_400;
+@define-color fg_muted                          @warm_grey_500;
+@define-color fg_disabled                       @muted_grey;
+
+@define-color fg_accent                         @sakura_pink_400;
+@define-color fg_link                           @sky_blue_400;
+@define-color fg_link_hover                     @sky_blue_300;
+
+@define-color border_base                       alpha(@sakura_pink_400, 0.30);
+@define-color border_subtle                     alpha(@sakura_pink_400, 0.15);
+@define-color border_strong                     @sakura_pink_600;
+@define-color border_focus                      @sakura_pink_400;
+
+@define-color border_muted                      @warm_grey_600;
+@define-color border_disabled                   @warm_grey_700;
+
+@define-color success                           @mint_green_400;
+@define-color success_light                     @mint_green_300;
+@define-color success_dark                      @mint_green_500;
+@define-color success_bg                        alpha(@mint_green_400, 0.15);
+@define-color success_border                    alpha(@mint_green_400, 0.30);
+
+@define-color warning                           @honey_yellow_400;
+@define-color warning_light                     @honey_yellow_300;
+@define-color warning_dark                      @honey_yellow_500;
+@define-color warning_bg                        alpha(@honey_yellow_400, 0.15);
+@define-color warning_border                    alpha(@honey_yellow_400, 0.30);
+
+@define-color error                             @coral_red_500;
+@define-color error_light                       @coral_red_400;
+@define-color error_dark                        @coral_red_600;
+@define-color error_bg                          alpha(@coral_red_500, 0.15);
+@define-color error_border                      alpha(@coral_red_500, 0.30);
+
+@define-color critical                          @coral_red_600;
+@define-color critical_bg                       alpha(@coral_red_600, 0.20);
+
+@define-color info                              @sky_blue_400;
+@define-color info_light                        @sky_blue_300;
+@define-color info_dark                         @sky_blue_500;
+@define-color info_bg                           alpha(@sky_blue_400, 0.15);
+@define-color info_border                       alpha(@sky_blue_400, 0.30);
+
+@define-color state_hover                       @sakura_pink_alpha_20;
+@define-color state_active                      @sakura_pink_alpha_30;
+@define-color state_focus                       @sakura_pink_400;
+@define-color state_disabled                    @muted_grey;
+@define-color state_selected                    @sakura_pink_alpha_30;
+
+@define-color button_bg                         @primary;
+@define-color button_bg_hover                   @primary_hover;
+@define-color button_bg_active                  @primary_active;
+@define-color button_text                       @pure_white;
+@define-color button_border                     @border_base;
+
+@define-color input_bg                          @bg_surface;
+@define-color input_border                      @border_subtle;
+@define-color input_border_focus                @border_focus;
+@define-color input_text                        @fg_primary;
+@define-color input_placeholder                 @fg_tertiary;
+
+@define-color workspace_inactive                @purple_300;
+@define-color workspace_inactive_bg             @purple_alpha_10;
+@define-color workspace_active                  @pure_white;
+@define-color workspace_active_bg               @primary;
+@define-color workspace_urgent                  @error;
+@define-color workspace_urgent_bg               @error_bg;
+
+@define-color window_bg                         @bg_base;
+@define-color window_border                     @border_base;
+@define-color window_title                      @fg_secondary;
+
+@define-color clock_text                        @sky_blue_300;
+@define-color clock_bg                          @info_bg;
+@define-color clock_border                      @info_border;
+
+@define-color fox_pink                          @sakura_pink_400;
+@define-color fox_pink_bg                       alpha(@sakura_pink_400, 0.22);
+@define-color fox_pink_border                   alpha(@sakura_pink_400, 0.45);
+
+@define-color fox_orange                        @orange_400;
+@define-color fox_orange_bg                     alpha(@orange_400, 0.22);
+@define-color fox_orange_border                 alpha(@orange_400, 0.45);
+
+@define-color weather_text                      @sky_blue_400;
+@define-color weather_bg                        @info_bg;
+@define-color weather_border                    @info_border;
+
+@define-color network_text                      @purple_500;
+@define-color network_bg                        alpha(@purple_500, 0.15);
+@define-color network_disconnected              @error;
+
+@define-color bluetooth_text                    @purple_400;
+@define-color bluetooth_bg                      alpha(@purple_400, 0.15);
+@define-color bluetooth_off                     @muted_grey;
+
+@define-color audio_text                        @purple_300;
+@define-color audio_bg                          alpha(@purple_300, 0.15);
+@define-color audio_muted                       @muted_grey;
+
+@define-color backlight_text                    @cream_300;
+@define-color backlight_bg                      alpha(@cream_300, 0.12);
+
+@define-color battery_good                      @success;
+@define-color battery_good_bg                   @success_bg;
+@define-color battery_charging                  @success;
+@define-color battery_warning                   @warning;
+@define-color battery_warning_bg                @warning_bg;
+@define-color battery_critical                  @critical;
+@define-color battery_critical_bg               @critical_bg;
+
+@define-color cpu_text                          @pink_soft_400;
+@define-color cpu_bg                            alpha(@pink_soft_400, 0.15);
+
+@define-color memory_text                       @plum_600;
+@define-color memory_bg                         alpha(@plum_600, 0.15);
+
+@define-color temperature_text                  @peach_500;
+@define-color temperature_bg                    alpha(@peach_500, 0.12);
+@define-color temperature_critical              @critical;
+@define-color temperature_critical_bg           @critical_bg;
+
+@define-color disk_text                         @sky_blue_300;
+@define-color disk_bg                           @info_bg;
+
+@define-color language_text                     @plum_400;
+@define-color language_bg                       alpha(@plum_400, 0.15);
+
+@define-color power_text                        @coral_red_400;
+@define-color power_bg                          alpha(@plum_400, 0.22);
+@define-color power_border                      alpha(@plum_400, 0.45);
+
+@define-color tray_bg                           alpha(@sakura_pink_400, 0.10);
+
+@define-color separator                         @sakura_pink_400;
+
+@define-color launcher_text                     @primary;
+@define-color launcher_bg                       alpha(@sakura_pink_400, 0.20);
+@define-color launcher_border                   @border_base;
+
+@define-color tooltip_bg                        @warm_grey_alpha_95;
+@define-color tooltip_text                      @primary;
+@define-color tooltip_border                    @border_strong;
+
+@define-color glow_soft                         alpha(@sakura_pink_400, 0.30);
+@define-color glow_medium                       alpha(@sakura_pink_400, 0.40);
+@define-color glow_strong                       alpha(@sakura_pink_400, 0.60);
+
+@define-color shadow_subtle                     alpha(@pure_black, 0.10);
+@define-color shadow_medium                     alpha(@pure_black, 0.20);
+@define-color shadow_strong                     alpha(@pure_black, 0.30);

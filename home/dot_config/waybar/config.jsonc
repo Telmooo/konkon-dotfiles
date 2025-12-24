@@ -1,219 +1,277 @@
 // -*- mode: jsonc -*-
+
+//    ❄️  ═══════════════════════════════════════════  ❄️
+//
+//              />  フ　　　🦊　konkon-dotfiles
+//             |  _  _ l
+//       🌸   /` ミ_xノ  こんこん。。。
+//           /      |
+//          /  ヽ   ノ         config.jsonc
+//         │   | | |        Waybar Configuration
+//
+//                    one soul, many forms
+//               shape-shifting configurations
+//
+//    ❄️  ═══════════════════════════════════════════  ❄️
+
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
+    "layer": "top",
+    // "output": "",
+    "position": "top",
+    // "height": 30,
+    // "width": 1280,
     "modules-left": [
-        "sway/workspaces",
-        "sway/mode",
-        "sway/scratchpad",
-        "custom/media"
+        "hyprland/workspaces"
     ],
-    "modules-center": [
-        "sway/window"
-    ],
+    "modules-center": [],
     "modules-right": [
-        "mpd",
-        "idle_inhibitor",
-        "pulseaudio",
-        "network",
-        "power-profiles-daemon",
-        "cpu",
-        "memory",
         "temperature",
-        "backlight",
-        "keyboard-state",
-        "sway/language",
-        "battery",
-        "battery#bat2",
+        "network",
+        "memory",
+        "cpu",
         "clock",
-        "tray",
-        "custom/power"
+        "backlight",
+        "battery"
     ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
+    // "margin-top": 0,
+    // "margin-left": 0,
+    // "margin-bottom": 0,
+    // "margin-right": 0,
+    "spacing": 4,
+    // "start_hidden": false,
+    // "modifier-reset": "press",
+    // "exclusive": true,
+    // "fixed-center": true,
+    // "passthrough": false,
+    // "ipc": false,
+    // "id": "",
+    "include": [
+        "~/.config/waybar/modules/*.jsonc",
+        "~/.config/waybar/modules/hyprland/*.jsonc"
+    ]
+    // "reload_style_on_change": false,
+    // "on-sigusr1": "toggle",
+    // "on-sigusr2": "reload",
+
+    // ╭─────────────────────────────────────────────────────────────╮
+    // │  LEFT MODULES                                               │
+    // ╰─────────────────────────────────────────────────────────────╯
+
+    // "backlight/slider": {
+    //     "min": 0,
+    //     "max": 100,
+    //     "orientation": "horizontal",
+    //     "device": "",
     // },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10,
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
-    },
-    "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
-    }
+
+    // "disk": {
+    //     "interval": 30,
+    //     "format": "{percentage_free}%",
+    //     "max-length": 10,
+    //     "states": [],
+    //     "on-click": "",
+    //     "on-click-middle": "",
+    //     "on-click-right": "",
+    //     "on-scroll-up": "",
+    //     "on-scroll-down": "",
+    //     "path": "/",
+    //     "smooth-scrolling-threshold": 0,
+    //     "tooltip": true,
+    //     "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
+    //     "uni": "GB"
+    // },
+
+    // "idle_inhibitor": {
+    //     "format": "{status}",
+    //     "format-icons": [],
+    //     "rotate": 0,
+    //     "max-length": 10,
+    //     "on-click": "",
+    //     "on-click-middle": "",
+    //     "on-click-right": "",
+    //     "on-scroll-up": "",
+    //     "on-scroll-down": "",
+    //     "smooth-scrolling-threshold": 0,
+    //     "tooltip": true,
+    //     "tooltip-format-activated": "{status}",
+    //     "tooltip-format-deactivated": "{status}",
+    //     "start-activated": false,
+    //     "timeout": 0
+    // },
+
+    // "keyboard-state": {
+    //     "interval": 1,
+    //     "format": "{name} {icon}",
+    //     "format-icons": {
+    //         "locked": "locked",
+    //         "unlocked": "unlocked"
+    //     },
+    //     "numlock": false,
+    //     "capslock": false,
+    //     "scrolllock": false,
+    //     "device-path": "",
+    //     "binding-keys": [58, 69, 70]
+    // },
+
+    // "sway/language": {
+    //     "format": "{}",
+    //     "on-click": "",
+    //     "on-click-middle": "",
+    //     "on-click-right": "",
+    //     "tooltip-format": "{}",
+    //     "tooltip": true
+    // },
+
+    // "load": {
+    //     "interval": 10,
+    //     "format": "{}",
+    //     "max-length": 10,
+    //     "rotate": 0,
+    //     "on-click": "",
+    //     "on-click-middle": "",
+    //     "on-click-right": "",
+    //     "on-scroll-up": "",
+    //     "on-scroll-down": "",
+    //     "smooth-scrolling-threshold": 0,
+    //     "tooltip": true
+    // },
+
+    // "mpd": {
+    //     "server": "",
+    //     "port": 0,
+    //     "password": "",
+    //     "interval": 10,
+    //     "timeout": 30,
+    //     "unknown-tag": "N/A",
+    //     "format": "{album} - {artist} - {title}",
+    //     "format-stopped": "stopped",
+    //     "format-paused": "",
+    //     "format-disconnected": "disconnected",
+    //     "tooltip": true,
+    //     "tooltip-format": "MPD (connected)",
+    //     "tooltip-format-disconnected": "MPD (disconnected)",
+    //     "artist-len": 0,
+    //     "album-len": 0,
+    //     "album-artist-len": 0,
+    //     "title-len": 0,
+    //     "rotate": 0,
+    //     "max-length": 10,
+    //     "on-click": "",
+    //     "on-click-middle": "",
+    //     "on-click-right": "",
+    //     "on-scroll-up": "",
+    //     "on-scroll-down": "",
+    //     "smooth-scrolling-threshold": 0,
+    //     "state-icons": {},
+    //     "consume-icons": {},
+    //     "random-icons": {},
+    //     "repeat-icons": {},
+    //     "single-icons": {}
+    // },
+
+    // "power-profiles-daemon": {
+    //     "format": "{icon}",
+    //     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    //     "tooltip": true,
+    //     "format-icons": {}
+    // },
+
+    // "privacy": {
+    //     "icon-spacing": 4,
+    //     "icon-size": 20,
+    //     "transition-duration": 250,
+    //     "modules": [
+    //         { "type": "screenshare" },
+    //         { "type": "audio-in" }
+    //     ],
+    //     "expand": false,
+    //     "ignore-monitor": true,
+    //     "ignore": []
+    // },
+
+    // "pulseaudio/slider": {
+    //     "min": 0,
+    //     "max": 100,
+    //     "orientation": "horizontal"
+    // },
+
+    // "pulseaudio": {
+    //     "format": "{volume}%",
+    //     "format-bluetooth": "",
+    //     "format-muted": "",
+    //     "format-source": "{volume}%",
+    //     "format-source-muted": "",
+    //     "format-icons": "",
+    //     "rotate": 0,
+    //     "states": [],
+    //     "max-length": 10,
+    //     "scroll-step": 1.0,
+    //     "on-click": "",
+    //     "on-click-middle": "",
+    //     "on-click-right": "",
+    //     "on-scroll-up": "",
+    //     "on-scroll-down": "",
+    //     "smooth-scrolling-threshold": 0,
+    //     "tooltip": true,
+    //     "tooltip-format": "{desc}",
+    //     "max-volume": 100,
+    //     "ignored-sinks": [],
+    //     "reverse-scrolling": false,
+    //     "reverse-mouse-scrolling": false
+    // },
+
+    // "systemd-failed-units": {
+    //     "format": "{nr_failed} failed",
+    //     "format-ok": "",
+    //     "user": true,
+    //     "system": true,
+    //     "hide-on-ok": true
+    // },
+
+    // "user": {
+    //     "interval": 60,
+    //     "format": "{user} {work_H}: {work_M}",
+    //     "avatar": "$HOME/.face",
+    //     "height": 30,
+    //     "width": 30,
+    //     "icon": false,
+    //     "open-on-click": true,
+    //     "open-path": "$HOME"
+    // },
+
+    // "wireplumber": {
+    //     "format": "{volume}%",
+    //     "format-muted": "",
+    //     "format-source": "{volume}%",
+    //     "format-source-muted": "{volume}%",
+    //     "format-icons": [],
+    //     "rotate": 0,
+    //     "states": [],
+    //     "max-length": 10,
+    //     "scroll-step": 1.0,
+    //     "on-click": "",
+    //     "on-click-middle": "",
+    //     "on-click-right": "",
+    //     "on-scroll-up": "",
+    //     "on-scroll-down": "",
+    //     "tooltip": true,
+    //     "tooltip-format": "{node_name}",
+    //     "max-volume": 100,
+    //     "reverse-scrolling": false,
+    //     "reverse-mouse-scrolling": false,
+    //     "node-type": "Audio/Sink",
+    //     "only-physical": false
+    // },
+
+    // "workspaces": {
+    //     "format": "{name}",
+    //     "format-icons": [],
+    //     "sort-by-name": true,
+    //     "sort-by-coordinates": true,
+    //     "sort-by-number": false,
+    //     "all-outputs": false,
+    //     "active-only": false,
+    //     "persistent-workspaces": {},
+    //     "on-click": ""
+    // },
 }

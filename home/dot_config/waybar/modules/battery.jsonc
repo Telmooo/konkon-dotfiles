@@ -1,0 +1,47 @@
+// -*- mode: jsonc -*-
+
+//    ❄️  ═══════════════════════════════════════════  ❄️
+//
+//              />  フ　　　🦊　konkon-dotfiles
+//             |  _  _ l
+//       🌸   /` ミ_xノ  こんこん。。。
+//           /      |
+//          /  ヽ   ノ         battery.jsonc
+//         │   | | |        Waybar Battery Module
+//
+//                    one soul, many forms
+//               shape-shifting configurations
+//
+//    ❄️  ═══════════════════════════════════════════  ❄️
+
+{
+    "battery": {
+        // "bat": "",
+        // "adapter": "",
+        // "design-capacity": false,
+        // "full-at": 95,
+        "interval": 60,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon} {capacity}%",
+        "format-time": "{H} h {M} min",
+        "format-icons": [
+            "󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+        ],
+        "format-charging": "󰉁 {capacity}%",
+        "min-length": 6,
+        "max-length": 6,
+        // "rotate": 0,
+        // "on-click": "",
+        // "on-click-middle": "",
+        // "on-click-right": "",
+        // "on-scroll-up": "",
+        // "on-scroll-down": "",
+        "tooltip": true,
+        "tooltip-format": "{timeTo}",
+        "weighted-average": false,
+        "bat-compatibility": false
+    }
+}

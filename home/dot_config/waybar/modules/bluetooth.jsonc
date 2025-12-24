@@ -1,0 +1,46 @@
+// -*- mode: jsonc -*-
+/*
+    ❄️  ═══════════════════════════════════════════  ❄️
+
+              />  フ　　　🦊　konkon-dotfiles
+             |  _  _ l
+       🌸   /` ミ_xノ  こんこん。。。
+           /      |
+          /  ヽ   ノ         config.jsonc
+         │   | | |        Waybar Configuration
+
+                    one soul, many forms
+               shape-shifting configurations
+
+    ❄️  ═══════════════════════════════════════════  ❄️
+*/
+
+{
+    "bluetooth": {
+        "controller": "",
+        "format-device-preference": [],
+        "format": "",
+		"format-disabled": "󰂲",
+		"format-off": "󰂲",
+		"format-on": "󰂰",
+		"format-connected": "󰂱",
+        // "format-no-controller": "",
+        // "rotate": 0,
+        "max-length": 2,
+        "min-length": 2,
+        // "align": 0,
+        // "on-click": "",
+        // "on-click-middle": "",
+        // "on-click-right": "",
+        // "on-scroll-up": "",
+        // "on-scroll-down": "",
+        // "smooth-scrolling-threshold": 0,
+        "tooltip": true,
+        "tooltip-format": "",
+        "tooltip-format-disabled": "",
+        "tooltip-format-off": "",
+        "tooltip-format-on": "",
+        "tooltip-format-connected": "",
+        "tooltip-format-enumerate-connected": ""
+    }
+}
