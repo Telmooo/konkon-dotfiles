@@ -4,7 +4,7 @@ default_stages: ["pre-commit", "pre-push"]
 fail_fast: false
 minimum_pre_commit_version: "4.5.1"
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
       - id: trailing-whitespace
@@ -22,7 +22,7 @@ repos:
       - id: mixed-line-ending
         args: [--fix=lf]
 
--   repo: https://github.com/gitleaks/gitleaks
+  - repo: https://github.com/gitleaks/gitleaks
     rev: v8.30.0
     hooks:
       - id: gitleaks
