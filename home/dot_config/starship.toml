@@ -1,0 +1,104 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+# Format: directory git_info lang_versions newline character
+format = """
+[](fg:#1a1520)\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$cmd_duration\
+$line_break\
+$character"""
+
+right_format = """$all"""
+
+# -- Character -----------------------------------------------------------------
+[character]
+success_symbol = "[狐](bold #fdb8ff)"
+error_symbol   = "[狐](bold #ff6b6b)"
+vimcmd_symbol  = "[狐](bold #7bed9f)"
+
+# -- Directory -----------------------------------------------------------------
+[directory]
+style            = "bold #fdb8ff"
+read_only        = " 󰌾"
+read_only_style  = "#ff6b6b"
+truncation_length = 3
+truncate_to_repo  = true
+format           = "[ 󰉋 $path]($style)[$read_only]($read_only_style) "
+
+# -- Git branch ----------------------------------------------------------------
+[git_branch]
+symbol = " "
+style  = "bold #a855f7"
+format = "[on $symbol$branch(:$remote_branch)]($style) "
+
+# -- Git status ----------------------------------------------------------------
+[git_status]
+style    = "#fdb8ff"
+format   = "([$all_status$ahead_behind]($style) )"
+modified = "~"
+staged   = "+"
+deleted  = "-"
+renamed  = "»"
+untracked = "?"
+ahead    = "⇡${count}"
+behind   = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+
+# -- Command duration ---------------------------------------------------------
+[cmd_duration]
+min_time          = 2000
+style             = "#ffa502"
+format            = "[ 󱑃 $duration]($style) "
+show_notifications = false
+
+# -- Fill ----------------------------------------------------------------------
+[fill]
+symbol = " "
+
+# -- Language / tool versions (right prompt) -----------------------------------
+[nodejs]
+symbol = " "
+style  = "#7bed9f"
+format = "[$symbol$version]($style) "
+
+[python]
+symbol = " "
+style  = "#60a5fa"
+format = "[$symbol$version]($style) "
+
+[rust]
+symbol = " "
+style  = "#ffa502"
+format = "[$symbol$version]($style) "
+
+[golang]
+symbol = " "
+style  = "#60a5fa"
+format = "[$symbol$version]($style) "
+
+[java]
+symbol = " "
+style  = "#ff6b6b"
+format = "[$symbol$version]($style) "
+
+[lua]
+symbol = " "
+style  = "#60a5fa"
+format = "[$symbol$version]($style) "
+
+# -- Time ---------------------------------------------------------------------
+[time]
+disabled      = false
+style         = "#4a3a50"
+format        = "[ 󰥔 $time]($style)"
+time_format   = "%H:%M"
+use_12hr      = false
+
+# -- Disabled modules ----------------------------------------------------------
+[package]
+disabled = true
