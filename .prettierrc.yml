@@ -1,0 +1,16 @@
+bracketSameLine: false
+bracketSpacing: true
+semi: true
+singleQuote: false
+trailingComma: all
+proseWrap: preserve
+printWidth: 120
+tabWidth: 4
+useTabs: false
+embeddedLanguageFormatting: auto
+overrides:
+  - files:
+      - "**/*.jsonc"
+    options:
+      trailingComma: none
+      tabWidth: 2
