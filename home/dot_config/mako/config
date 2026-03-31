@@ -1,0 +1,37 @@
+# Global defaults
+font=Noto Nerd Font 13
+background-color=#211826
+text-color=#ffffff
+border-color=#fdb8ff
+border-size=2
+border-radius=8
+
+width=360
+height=110
+margin=12
+padding=12
+
+icons=1
+icon-location=left
+max-icon-size=48
+
+max-visible=5
+default-timeout=5000
+ignore-timeout=0
+
+# Urgency: low
+[urgency=low]
+border-color=#a855f7
+default-timeout=3000
+
+# Urgency: normal
+[urgency=normal]
+border-color=#fdb8ff
+default-timeout=5000
+
+# Urgency: high
+[urgency=critical]
+background-color=#2d1520
+border-color=#ff6b6b
+text-color=#ffffff
+default-timeout=0

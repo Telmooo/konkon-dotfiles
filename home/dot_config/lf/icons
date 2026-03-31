@@ -1,0 +1,127 @@
+# File types
+ln  󰌹  # symlink
+or  󰌸  # broken symlink
+tw  󰉐  # sticky + other-writable
+ow  󰉐  # other-writable
+st  󰉐  # sticky
+di  󰉋  # directory
+pi  󰟥  # named pipe
+so  󰟦  # socket
+bd  󰋊  # block device
+cd  󱞫  # char device
+su  󰒃  # setuid
+sg  󰒄  # setgid
+ex  󰐊  # executable
+
+# Archives / compressed
+*.tar   󰞔
+*.tgz   󰞔
+*.tar.gz 󰞔
+*.tar.xz 󰞔
+*.tar.bz2 󰞔
+*.tar.zst 󰞔
+*.zip   󰞔
+*.7z    󰞔
+*.rar   󰞔
+*.gz    󰗄
+*.bz2   󰗄
+*.xz    󰗄
+*.zst   󰗄
+
+# Images
+*.jpg   󰋩
+*.jpeg  󰋩
+*.png   󰋩
+*.gif   󰋩
+*.svg   󰜡
+*.webp  󰋩
+*.bmp   󰋩
+*.ico   󰋩
+*.tiff  󰋩
+*.avif  󰋩
+
+# Video
+*.mp4   󰎁
+*.mkv   󰎁
+*.avi   󰎁
+*.mov   󰎁
+*.webm  󰎁
+*.flv   󰎁
+
+# Audio
+*.mp3   󰎈
+*.flac  󰎈
+*.ogg   󰎈
+*.wav   󰎈
+*.aac   󰎈
+*.opus  󰎈
+
+# Documents
+*.pdf   󰈦
+*.doc   󰈭
+*.docx  󰈭
+*.xls   󰈛
+*.xlsx  󰈛
+*.ppt   󰈧
+*.pptx  󰈧
+*.odt   󰈭
+*.ods   󰈛
+
+# Text / Markup
+*.txt   󰈙
+*.md    󰍔
+*.rst   󰍔
+*.org   󰍔
+
+# Code
+*.sh    󰆍
+*.fish  󰆍
+*.bash  󰆍
+*.zsh   󰆍
+*.py    󰌠
+*.js    󰌞
+*.ts    󰛦
+*.jsx   󰜈
+*.tsx   󰜈
+*.html  󰌝
+*.css   󰌜
+*.scss  󰌜
+*.json  󰘦
+*.jsonc 󰘦
+*.toml  󰘦
+*.yaml  󰘦
+*.yml   󰘦
+*.xml   󰗀
+*.lua   󰢱
+*.vim   󰕷
+*.rs    󱘗
+*.go    󰟓
+*.c     󰙱
+*.h     󰙱
+*.cpp   󰙲
+*.hpp   󰙲
+*.java  󰬷
+*.kt    󰛓
+*.rb    󰴭
+*.php   󰌟
+*.swift 󰛧
+*.cs    󰌛
+*.nix   󱄅
+
+# Config
+*.conf      󱁻
+*.config    󱁻
+*.ini       󱁻
+*.env       󱁻
+Makefile    󱁻
+Dockerfile  󰡨
+*.lock      󰒃
+
+# Git
+.git        󰊢
+.gitignore  󰊢
+.gitconfig  󰊢
+
+# Specific files
+README.md   󰍔
+LICENSE     󰌒
