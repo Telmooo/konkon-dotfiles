@@ -1,0 +1,311 @@
+/* variables */
+:root {
+  --konkon-bg:        #1a1520;
+  --konkon-surface:   #211826;
+  --konkon-overlay:   #2d1f33;
+  --konkon-border:    #3d2a45;
+  --konkon-muted:     #6b5f7a;
+  --konkon-text:      #e2d9f3;
+  --konkon-subtext:   #9d8fb0;
+  --konkon-pink:      #fdb8ff;
+  --konkon-purple:    #a855f7;
+  --konkon-pink-dim:  rgba(253, 184, 255, 0.15);
+  --konkon-pink-glow: rgba(253, 184, 255, 0.25);
+  --konkon-radius:    8px;
+  --konkon-radius-sm: 5px;
+}
+
+/* hide titlebar / native decorations */
+/* Let Hyprland handle window decorations */
+#titlebar                               { display: none !important; }
+#TabsToolbar .titlebar-spacer           { display: none !important; }
+
+/* main browser background */
+:root,
+#main-window,
+#browser,
+#appcontent,
+#content-deck {
+  background-color: var(--konkon-bg) !important;
+  color: var(--konkon-text) !important;
+}
+
+/* nav toolbar */
+#nav-bar {
+  background-color: var(--konkon-surface) !important;
+  border-top: none !important;
+  border-bottom: 1px solid var(--konkon-border) !important;
+  box-shadow: none !important;
+  padding: 4px 8px !important;
+}
+
+/* tab bar */
+#TabsToolbar {
+  background-color: var(--konkon-bg) !important;
+  padding: 4px 4px 0 4px !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* individual tab */
+.tabbrowser-tab {
+  color: var(--konkon-subtext) !important;
+  font-family: "Noto Nerd Font", sans-serif !important;
+}
+
+.tab-background {
+  background-color: transparent !important;
+  border-radius: var(--konkon-radius) var(--konkon-radius) 0 0 !important;
+  margin: 0 2px !important;
+  border: none !important;
+}
+
+/* active tab */
+.tabbrowser-tab[selected="true"] .tab-background {
+  background-color: var(--konkon-surface) !important;
+  box-shadow: inset 0 -2px 0 var(--konkon-pink) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-label {
+  color: var(--konkon-pink) !important;
+  font-weight: 600 !important;
+}
+
+/* hover tab */
+.tabbrowser-tab:not([selected="true"]):hover .tab-background {
+  background-color: var(--konkon-overlay) !important;
+}
+
+/* close button - show only on hover */
+.tab-close-button {
+  opacity: 0 !important;
+  transition: opacity 0.15s ease !important;
+}
+.tabbrowser-tab:hover .tab-close-button {
+  opacity: 1 !important;
+}
+
+/* tab favicon */
+.tab-icon-image {
+  filter: none !important;
+}
+
+/* new tab button */
+#tabs-newtab-button,
+.tabs-newtab-button {
+  color: var(--konkon-muted) !important;
+}
+#tabs-newtab-button:hover,
+.tabs-newtab-button:hover {
+  color: var(--konkon-pink) !important;
+  background-color: var(--konkon-pink-dim) !important;
+  border-radius: var(--konkon-radius-sm) !important;
+}
+
+/* url / address bar */
+#urlbar,
+#urlbar-background {
+  background-color: var(--konkon-overlay) !important;
+  border: 1px solid var(--konkon-border) !important;
+  border-radius: var(--konkon-radius) !important;
+  color: var(--konkon-text) !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+#urlbar[focused="true"] #urlbar-background,
+#urlbar:focus-within #urlbar-background {
+  border-color: var(--konkon-pink) !important;
+  box-shadow: 0 0 0 2px var(--konkon-pink-glow) !important;
+}
+
+/* url text */
+#urlbar-input {
+  color: var(--konkon-text) !important;
+  font-family: "Noto Nerd Font", sans-serif !important;
+}
+
+/* identity / lock icon */
+#identity-box {
+  color: var(--konkon-subtext) !important;
+}
+#identity-box:hover {
+  background-color: var(--konkon-pink-dim) !important;
+  border-radius: var(--konkon-radius-sm) !important;
+}
+
+/* page action / tracking protection icons */
+#tracking-protection-icon-container,
+#page-action-buttons {
+  color: var(--konkon-muted) !important;
+}
+
+/* toolbar buttons */
+toolbarbutton {
+  color: var(--konkon-subtext) !important;
+  border-radius: var(--konkon-radius-sm) !important;
+}
+toolbarbutton:hover {
+  background-color: var(--konkon-pink-dim) !important;
+  color: var(--konkon-pink) !important;
+}
+toolbarbutton[checked="true"],
+toolbarbutton[open="true"] {
+  background-color: var(--konkon-pink-dim) !important;
+  color: var(--konkon-pink) !important;
+}
+
+/* back / forward / reload */
+#back-button,
+#forward-button,
+#reload-button,
+#stop-button {
+  color: var(--konkon-subtext) !important;
+}
+
+/* urlbar dropdown / autocomplete popup */
+#PopupAutoCompleteRichResult,
+.urlbarView {
+  background-color: var(--konkon-surface) !important;
+  border: 1px solid var(--konkon-border) !important;
+  border-radius: var(--konkon-radius) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+  color: var(--konkon-text) !important;
+}
+
+.urlbarView-row:hover,
+.urlbarView-row[selected] {
+  background-color: var(--konkon-overlay) !important;
+}
+
+.urlbarView-row[selected] {
+  border-left: 2px solid var(--konkon-pink) !important;
+}
+
+.urlbarView-url {
+  color: var(--konkon-pink) !important;
+}
+
+/* menu popup */
+menupopup,
+panel {
+  background-color: var(--konkon-surface) !important;
+  border: 1px solid var(--konkon-border) !important;
+  border-radius: var(--konkon-radius) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+  color: var(--konkon-text) !important;
+}
+
+menuitem:hover,
+menuitem[_moz-menuactive="true"] {
+  background-color: var(--konkon-overlay) !important;
+  color: var(--konkon-pink) !important;
+}
+
+menuseparator {
+  border-color: var(--konkon-border) !important;
+}
+
+/* sidebar */
+#sidebar-box {
+  background-color: var(--konkon-surface) !important;
+  border-right: 1px solid var(--konkon-border) !important;
+}
+
+#sidebar-header {
+  background-color: var(--konkon-bg) !important;
+  color: var(--konkon-pink) !important;
+  border-bottom: 1px solid var(--konkon-border) !important;
+}
+
+/* find bar */
+#FindToolbar {
+  background-color: var(--konkon-surface) !important;
+  border-top: 1px solid var(--konkon-border) !important;
+  color: var(--konkon-text) !important;
+}
+
+.findbar-textbox {
+  background-color: var(--konkon-overlay) !important;
+  border: 1px solid var(--konkon-border) !important;
+  border-radius: var(--konkon-radius-sm) !important;
+  color: var(--konkon-text) !important;
+}
+
+.findbar-textbox[status="notfound"] {
+  background-color: rgba(255, 107, 107, 0.2) !important;
+  border-color: #ff6b6b !important;
+}
+
+/* found highlight */
+.found-item {
+  background-color: var(--konkon-pink-dim) !important;
+}
+
+/* scrollbars */
+/* browser chrome scrollbars */
+scrollbar {
+  appearance: none !important;
+  width: 8px !important;
+  height: 8px !important;
+}
+
+scrollbar thumb {
+  background-color: var(--konkon-muted) !important;
+  border-radius: 4px !important;
+  min-height: 24px !important;
+}
+
+scrollbar thumb:hover {
+  background-color: var(--konkon-pink) !important;
+}
+
+scrollbar track {
+  background-color: var(--konkon-bg) !important;
+}
+
+/* status bar / notifications */
+#statuspanel {
+  background-color: var(--konkon-surface) !important;
+  border: 1px solid var(--konkon-border) !important;
+  border-radius: var(--konkon-radius-sm) !important;
+  color: var(--konkon-subtext) !important;
+  font-size: 11px !important;
+}
+
+/* notification bars */
+notification {
+  background-color: var(--konkon-surface) !important;
+  border-bottom: 1px solid var(--konkon-border) !important;
+  color: var(--konkon-text) !important;
+}
+
+notification[type="info"] {
+  border-left: 3px solid var(--konkon-pink) !important;
+}
+
+/* bookmarks bar */
+#PersonalToolbar {
+  background-color: var(--konkon-bg) !important;
+  border-bottom: 1px solid var(--konkon-border) !important;
+}
+
+toolbarbutton.bookmark-item {
+  color: var(--konkon-subtext) !important;
+  border-radius: var(--konkon-radius-sm) !important;
+}
+
+toolbarbutton.bookmark-item:hover {
+  background-color: var(--konkon-pink-dim) !important;
+  color: var(--konkon-pink) !important;
+}
+
+/* remove separator between tabbar and toolbar */
+#navigator-toolbox {
+  border-bottom: none !important;
+}
+
+/* active window indicator */
+#main-window:not([active]) {
+  opacity: 0.95;
+}

@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>こんこん</title>
+        <style>
+            /* reset & base */
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                --bg: #1a1520;
+                --surface: #211826;
+                --overlay: #2d1f33;
+                --border: #3d2a45;
+                --muted: #6b5f7a;
+                --subtext: #9d8fb0;
+                --text: #e2d9f3;
+                --pink: #fdb8ff;
+                --purple: #a855f7;
+                --pink-dim: rgba(253, 184, 255, 0.1);
+                --font-ui: "Noto Nerd Font", "Noto Sans CJK JP", sans-serif;
+                --font-mono: "JetBrains Mono", "JetBrainsMono Nerd Font", monospace;
+            }
+
+            html,
+            body {
+                height: 100%;
+                background-color: var(--bg);
+                color: var(--text);
+                font-family: var(--font-ui);
+                overflow: hidden;
+            }
+
+            /* subtle noise/grain texture overlay */
+            body::before {
+                content: "";
+                position: fixed;
+                inset: 0;
+                background-image:
+                    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(168, 85, 247, 0.08) 0%, transparent 70%),
+                    radial-gradient(ellipse 50% 40% at 80% 110%, rgba(253, 184, 255, 0.05) 0%, transparent 60%);
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            /* layout */
+            .container {
+                position: relative;
+                z-index: 1;
+                height: 100vh;
+                display: grid;
+                grid-template-rows: 1fr auto 1fr;
+                grid-template-columns: 1fr;
+                place-items: center;
+                gap: 0;
+                padding: 2rem;
+            }
+
+            /* top section: kitsune art */
+            .art-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0.75rem;
+                width: 100%;
+            }
+
+            .kitsune-art {
+                font-family: var(--font-mono);
+                font-size: clamp(5px, 0.9vw, 11px);
+                line-height: 1.15;
+                color: var(--pink);
+                opacity: 0.55;
+                white-space: pre;
+                text-align: left;
+                transition: opacity 0.4s ease;
+                filter: drop-shadow(0 0 12px rgba(253, 184, 255, 0.3));
+                user-select: none;
+            }
+
+            .kitsune-art:hover {
+                opacity: 0.85;
+            }
+
+            .greeting {
+                font-family: var(--font-ui);
+                font-size: clamp(10px, 1vw, 14px);
+                color: var(--muted);
+                letter-spacing: 0.3em;
+                text-transform: uppercase;
+            }
+
+            /* center section: clock */
+            .clock-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .time {
+                font-family: var(--font-mono);
+                font-size: clamp(2.5rem, 7vw, 6rem);
+                font-weight: 200;
+                letter-spacing: -0.02em;
+                color: var(--text);
+                line-height: 1;
+                text-shadow: 0 0 40px rgba(253, 184, 255, 0.2);
+            }
+
+            .time .colon {
+                color: var(--pink);
+                animation: blink 1s step-end infinite;
+            }
+
+            @keyframes blink {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.2;
+                }
+            }
+
+            .date {
+                font-family: var(--font-ui);
+                font-size: clamp(0.75rem, 1.2vw, 1rem);
+                color: var(--subtext);
+                letter-spacing: 0.1em;
+            }
+
+            /* bottom section: links */
+            .links-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 1rem;
+                width: 100%;
+                max-width: 600px;
+            }
+
+            .links-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+
+            .link-item {
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+                padding: 0.4rem 0.85rem;
+                background-color: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 20px;
+                color: var(--subtext);
+                text-decoration: none;
+                font-size: 0.8rem;
+                letter-spacing: 0.02em;
+                transition: all 0.2s ease;
+            }
+
+            .link-item:hover {
+                background-color: var(--pink-dim);
+                border-color: var(--pink);
+                color: var(--pink);
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(253, 184, 255, 0.15);
+            }
+
+            .link-item .icon {
+                font-size: 0.9rem;
+                opacity: 0.8;
+            }
+
+            /* search bar */
+            .search-wrap {
+                position: relative;
+                width: 100%;
+                max-width: 480px;
+            }
+
+            .search-wrap .search-icon {
+                position: absolute;
+                left: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--muted);
+                font-size: 0.9rem;
+                pointer-events: none;
+            }
+
+            .search-input {
+                width: 100%;
+                padding: 0.65rem 1rem 0.65rem 2.5rem;
+                background-color: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 24px;
+                color: var(--text);
+                font-family: var(--font-ui);
+                font-size: 0.9rem;
+                outline: none;
+                transition:
+                    border-color 0.2s ease,
+                    box-shadow 0.2s ease;
+            }
+
+            .search-input::placeholder {
+                color: var(--muted);
+            }
+
+            .search-input:focus {
+                border-color: var(--pink);
+                box-shadow: 0 0 0 3px rgba(253, 184, 255, 0.12);
+            }
+
+            /* corner watermark */
+            .watermark {
+                position: fixed;
+                bottom: 1.25rem;
+                right: 1.5rem;
+                font-size: 0.7rem;
+                color: var(--border);
+                letter-spacing: 0.15em;
+                user-select: none;
+                font-family: var(--font-mono);
+            }
+
+            /* scrollbar */
+            ::-webkit-scrollbar {
+                width: 0;
+            }
+
+            /* responsive */
+            @media (max-height: 600px) {
+                .kitsune-art {
+                    display: none;
+                }
+                .time {
+                    font-size: 3rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- kitsune art + greeting -->
+            <section class="art-section">
+                <pre class="kitsune-art" aria-hidden="true">
+⠀⠀⠀⠀⠀⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣸⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢠⡟⠘⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢰⡟⠀⠀⠈⠻⣷⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣠⡟⠀⠀⠀⠀⠀⠈⢻⡿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣰⡟⠀⠀⠀⠀⠀⠀⠀⠀⠻⠸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢰⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣇⠀⣠⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠀⠀⠀
+⣾⡁⢀⣠⠴⠒⠲⣤⣠⠶⠋⠳⣤⣸⣿⣰⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀
+⣿⠟⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣽⠏⣿⡿⢿⣿⣿⣿⣷⣄⠀⠀⠀⠀⢠⣾⣿⣿⣿⠋⢹⡇⠀⠀⠀⠀⠀⠀
+⢹⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡟⠀⣿⠁⠀⠙⣿⡛⠛⢿⡶⠶⠶⠶⣿⣄⣀⣰⠃⠀⢸⡇⠀⠀⠀⠀⠀⠀
+⠈⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡿⠁⠀⣿⠀⠀⠀⠈⢷⡀⠘⠛⠀⠀⠀⠀⠈⠉⠳⣄⠀⢸⡇⠀⠀⠀⠀⠀⠀
+⠀⠈⢿⣦⡀⠀⠀⠀⠀⠀⢀⣿⣇⣀⠀⢻⠀⠀⠀⠀⢰⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣾⠃⠀⣤⣤⣄⠀⠀
+⠀⠀⠀⠉⠻⢶⣄⣠⣴⠞⠛⠉⠉⠙⠻⢾⣇⠀⢀⣰⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡄⠀⣿⢩⡿⣿⡆
+⠀⠀⠀⠀⣠⣴⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⢹⡷⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⣿⣟⣵⡿⠁
+⠀⢀⣠⡾⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣇⠀⠀⠀⣴⣿⠀⠀⠀⠀⠀⠀⢠⣶⠀⠀⣸⡇⠀⠙⠋⠁⠀⠀
+⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣄⣈⣀⣙⣁⠀⠀⣶⣾⡶⠀⠻⠿⠀⢠⣿⣁⡀⠀⠀⠀⠀⠀
+⠈⠛⠻⠿⠶⠶⠶⡤⣤⣤⣤⣄⣀⣤⣀⣠⣤⣀⣀⣹⣿⣿⣿⣿⣤⣽⣿⣴⣶⣶⡦⢼⣿⣿⣿⣿⠇⠀⠀⠀⠀</pre
+                >
+                <span class="greeting">こんこん &mdash; one soul, many forms</span>
+            </section>
+
+            <!-- clock -->
+            <section class="clock-section">
+                <div class="time" id="clock">
+                    <span id="hh">00</span><span class="colon">:</span><span id="mm">00</span
+                    ><span class="colon">:</span><span id="ss">00</span>
+                </div>
+                <div class="date" id="date-display"></div>
+            </section>
+
+            <!-- search + links -->
+            <section class="links-section">
+                <div class="search-wrap">
+                    <span class="search-icon">⌕</span>
+                    <input
+                        class="search-input"
+                        type="text"
+                        placeholder="search..."
+                        id="search-input"
+                        autocomplete="off"
+                        spellcheck="false"
+                    />
+                </div>
+
+                <nav class="links-grid" id="links-grid">
+                    <!-- links are inserted here -->
+                </nav>
+            </section>
+        </div>
+
+        <div class="watermark">狐 kitsune</div>
+
+        <script>
+            /* clock */
+            const hh = document.getElementById("hh");
+            const mm = document.getElementById("mm");
+            const ss = document.getElementById("ss");
+            const dateEl = document.getElementById("date-display");
+
+            const pad = (n) => String(n).padStart(2, "0");
+
+            const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const MONTHS = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ];
+
+            function tick() {
+                const now = new Date();
+                hh.textContent = pad(now.getHours());
+                mm.textContent = pad(now.getMinutes());
+                ss.textContent = pad(now.getSeconds());
+                dateEl.textContent = `${DAYS[now.getDay()]}, ${MONTHS[now.getMonth()]} ${now.getDate()} ${now.getFullYear()}`;
+            }
+
+            tick();
+            setInterval(tick, 1000);
+
+            /* search */
+            const searchInput = document.getElementById("search-input");
+
+            searchInput.addEventListener("keydown", (e) => {
+                if (e.key !== "Enter") return;
+                const q = searchInput.value.trim();
+                if (!q) return;
+                // if it looks like a URL, navigate directly; otherwise search
+                const isUrl = /^(https?:\/\/|www\.)/.test(q) || /^[a-z0-9-]+\.[a-z]{2,}(\/|$)/i.test(q);
+                const url = isUrl
+                    ? q.startsWith("http")
+                        ? q
+                        : "https://" + q
+                    : `https://google.com/search?q=${encodeURIComponent(q)}`;
+                window.location.href = url;
+            });
+
+            /* focus search on keypress */
+            document.addEventListener("keydown", (e) => {
+                if (document.activeElement === searchInput) return;
+                if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                    searchInput.focus();
+                }
+            });
+
+            /* links */
+            const LINKS = [{ icon: "\ue709", label: "github", url: "https://github.com/Telmooo" }];
+
+            const grid = document.getElementById("links-grid");
+            LINKS.forEach(({ icon, label, url }) => {
+                const a = document.createElement("a");
+                a.className = "link-item";
+                a.href = url;
+                a.innerHTML = `<span class="icon">${icon}</span><span>${label}</span>`;
+                grid.appendChild(a);
+            });
+        </script>
+    </body>
+</html>

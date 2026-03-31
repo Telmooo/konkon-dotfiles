@@ -1,0 +1,128 @@
+/* variables */
+:root {
+  --konkon-bg:     #1a1520;
+  --konkon-pink:   #fdb8ff;
+  --konkon-muted:  #6b5f7a;
+  --konkon-text:   #e2d9f3;
+}
+
+/* text selection */
+::selection {
+  background-color: #fdb8ff !important;
+  color: #1a1520 !important;
+}
+
+/* web scrollbars */
+@supports (scrollbar-color: auto) {
+  * {
+    scrollbar-color: #6b5f7a #1a1520 !important;
+    scrollbar-width: thin !important;
+  }
+
+  *:hover {
+    scrollbar-color: #fdb8ff #1a1520 !important;
+  }
+}
+
+/* webkit scrollbar */
+::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1520 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b5f7a !important;
+  border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fdb8ff !important;
+}
+
+/* about:blank */
+@-moz-document url("about:blank") {
+  html, body {
+    background-color: #1a1520 !important;
+    color: #e2d9f3 !important;
+  }
+}
+
+/* about:newtab base (fallback if not using New Tab Override) */
+@-moz-document url("about:newtab"), url("about:home") {
+  body {
+    background-color: #1a1520 !important;
+    color: #e2d9f3 !important;
+  }
+
+  /* sponsored / activity stream elements */
+  .outer-wrapper {
+    background-color: #1a1520 !important;
+  }
+
+  .search-wrapper .search-handoff-button,
+  .search-wrapper input {
+    background-color: #211826 !important;
+    border-color: #3d2a45 !important;
+    color: #e2d9f3 !important;
+    border-radius: 8px !important;
+  }
+
+  .search-wrapper .search-handoff-button:focus,
+  .search-wrapper input:focus {
+    border-color: #fdb8ff !important;
+    box-shadow: 0 0 0 2px rgba(253,184,255,0.25) !important;
+  }
+
+  /* top sites */
+  .top-site-outer .tile {
+    background-color: #211826 !important;
+    border-radius: 8px !important;
+  }
+
+  .top-site-outer .title {
+    color: #9d8fb0 !important;
+  }
+
+  /* section headers */
+  .section-title {
+    color: #fdb8ff !important;
+  }
+}
+
+/* about:config */
+@-moz-document url("about:config") {
+  body {
+    background-color: #1a1520 !important;
+    color: #e2d9f3 !important;
+  }
+
+  table {
+    background-color: #211826 !important;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #1a1520 !important;
+  }
+
+  tr:hover {
+    background-color: rgba(253,184,255,0.1) !important;
+  }
+}
+
+/* about:addons */
+@-moz-document url("about:addons") {
+  :root {
+    --in-content-bg-dark: #1a1520 !important;
+    --in-content-bg-darker: #211826 !important;
+    --in-content-text-color: #e2d9f3 !important;
+    --in-content-link-color: #fdb8ff !important;
+    --in-content-link-color-hover: #a855f7 !important;
+    --in-content-border-highlight: #fdb8ff !important;
+    --in-content-border-focus: #fdb8ff !important;
+    --in-content-button-background-hover: rgba(253,184,255,0.15) !important;
+  }
+}
