@@ -33,3 +33,9 @@ if type -q zoxide
     abbr -a -- cd z
     abbr -a -- cdi zi
 end
+
+# Network
+abbr -a -- scan-ports "ss -tlnp"
+if type -q nmap
+    abbr -a -- scan-ports-remote "nmap -p- --open"
+end

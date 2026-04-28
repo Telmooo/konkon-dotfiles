@@ -39,6 +39,7 @@ packages = [
     "man-pages",
     "neovim",
     "networkmanager",
+    "nmap",
     "noctalia-shell",
     "noto-fonts",
     "noto-fonts-cjk",
