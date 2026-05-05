@@ -44,6 +44,7 @@ packages = [
     "noto-fonts",
     "noto-fonts-cjk",
     "noto-fonts-emoji",
+    "opencode",
     "openssh",
     "openssl",
     "pavucontrol",
@@ -71,6 +72,7 @@ packages = [
     "vlc",
     "vlc-plugins-all",
     "wl-clipboard",
+    "wget",
     "xdg-desktop-portal-hyprland",
     "zoxide",
 ]
