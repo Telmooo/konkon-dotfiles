@@ -1,0 +1,12 @@
+runApp            = "app2unit --"
+terminal          = runApp .. " $TERMINAL"
+fallbackTerminal  = "foot"
+terminalExec      = runApp .. " $TERMINAL_EXEC"
+fileManager       = "dolphin"
+termFileManager   = "lf"
+browser           = "$BROWSER"
+fallbackBrowser   = "chromium"
+menu              = "vicinae toggle"
+editor            = "$EDITOR"
+visualEditor      = "code"
+
